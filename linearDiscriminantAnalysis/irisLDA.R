@@ -1,4 +1,6 @@
 # For this project, I will be performing Linear Discriminant Analysis on the Iris data set from the UCI Machine Learning database
+# This will be one of the easier data sets to perform analysis on
+# Soon to come will be an explanation on why LDA was chosen for this data set
 # The link to the data set can be found here:
 
 # http://archive.ics.uci.edu/ml/datasets/Iris
