@@ -13,18 +13,18 @@ These algorithms will be written in the R and Python languages.
 
 # If you are here, these concepts are highly recommended you know:
 
--Regression 
+-Regression   
 -Explanatory versus Response variables	
--Coefficient values 
+-Coefficient values  
 -Statistical significance	
 -Classes     
 -Etc.	     
 
 # We will be using these tools as well:
 
--R Studio 
+-R Studio  
 -Python	  
--Terminal 
+-Terminal  
 -Various packages associated with R/Python	
 
 # Enjoy and feel free to leave messages/comments. I am a student in college trying to gain machine learning experience on my own, so I am always looking for feedback! 
