@@ -1,0 +1,70 @@
+# Doing some more data stuff with the iris data set!!!
+# Now we will be performing Principal Component Analysis
+
+# In PCA there are at least two variables (one response variable), and for each variable in the model (including the response) there will be a Principle Component model generated. 
+
+# In these models, the first two variables in it explain the majority of the variance in the model (up to 95%)
+
+# First let us install these packages
+
+install.packages("data.table")
+require(data.table)
+
+install.packages("MASS")
+require(MASS)
+
+install.packages("ggplot2")
+require(ggplot2)
+
+install.packages("scales")
+require(scales)
+
+install.packages("gridExtr")
+require(gridExtra)
+
+install.packages("MASS")
+require(MASS)
+
+install.packages (“class”)
+require(class)
+
+install.packages(“tree”) 
+require(tree)
+
+# Now let's change the data into something easier to use (and take a look at it)
+
+iris.data <- data.table(iris[ , 1:4])
+iris.data
+
+# Now let's create the PCA for this data and take a look at it
+# We must take out the data on the far right because it is not numerical
+# It is the classes we are trying to predict
+# Even though it is removed from the algorithm 
+# The algorithm will still know what it is trying to predict
+# Think of the far right column as "answers" (sample) and from learning
+# the different possibilities it will make predictions instead (for population as well)
+
+
+iris.pca <- prcomp(iris[,1:4], scale =	TRUE, cor = TRUE)
+summary(iris.pca)
+iris.pca
+
+
+# Access the different columns in iris.pca
+# two libraries don't work below. Any feedback on why would be appreciated
+
+
+attributes(iris.pca)
+library(devtools)
+library(ggbiplot)
+
+# Now let's do the easy way
+
+
+require(ggfortify)
+autoplot(prcomp(iris[, 1:4]), data = iris, colour = 'Species', loadings = TRUE)
+
+PVE <- iris.pca$sdev^2/sum(iris.pca$sdev^2)
+PVE[1:4]
+screeplot(iris.pca, type = "lines", main = "PVE Scree plot of Iris")
+
