@@ -1,9 +1,11 @@
 # Doing some more data stuff with the iris data set!!!
 # Now we will be performing Principal Component Analysis
 
-# In PCA there are at least two variables (one response variable), and for each variable in the model (including the response) there will be a Principle Component model generated. 
+# In PCA there are at least two variables (one response variable)
+# and for each variable in the model (including the response) there will be a Principle Component model generated. 
 
-# In these models, the first two components (they are linear combinations of dependent variables) in it explain the majority of the variance in the model (up to 95%)
+# In these models, the first two components (they are linear combinations of dependent variables) 
+#in it explain the majority of the variance in the model (up to 95%)
 
 
 # First let us install these packages
@@ -92,9 +94,9 @@ iris.pca <- prcomp(iris[,1:4], scale =	TRUE, cor = TRUE)
 
 # The first principal component is the linear combination of the dependent variables that has the max variance.
 # This component accounts for most of the variance in the model
-# The second principal component is the linear combination of the dependent variables that accounts for most of the remaining variation
-# The first and second components are orthogonal
-# (The correlation between them is zero)
+# The second principal component is the linear combination of the dependent variables 
+# that accounts for most of the remaining variance
+# The first and second components are orthogonal (meaning the correlation between them is zero)
 
 
 # We can view this here in the summary statistics
@@ -116,8 +118,8 @@ iris.pca
 iris.pca$rotation
 
 
-# Since Principal components in themselves are linear combinations of the explanatory variables, this output shows essentially the coefficients or "weights"
-# of the linear combinations created by each PC
+# Since Principal components in themselves are linear combinations of the explanatory variables
+# this output shows essentially the coefficients or "weights" of the linear combinations created by each PC
 
 
 biplot(iris.pca, scale = 0)
