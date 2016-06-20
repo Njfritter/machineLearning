@@ -88,6 +88,8 @@ knn.errorplot <- ggplot(data.frame(x = 1:100, y = Error), aes(x = x, y = y)) + g
 
 knn.errorplot
 # Now plot it!!!
+# As we can see, as the value of K increases (the more neighbors considered)
+# The higher the error rate rises
 
 table(test.class, knn.iris)
 # Get the prediction accuracy of the algorithm
